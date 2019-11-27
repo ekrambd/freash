@@ -16,8 +16,8 @@
 
             <!-- Start Widget -->
             <div class="row">
-	           <!-- Basic example -->
-	           <div class="col-md-2"></div>
+               <!-- Basic example -->
+               <div class="col-md-2"></div>
                 <div class="col-md-8 ">
                     <div class="panel panel-default">
                         <div class="panel-heading"><h3 class="panel-title">Add Employee</h3></div>
@@ -32,7 +32,7 @@
                         @endif
                         <div class="panel-body">
                             <form role="form" action="{{ url('/insert-employee') }}" method="post" enctype="multipart/form-data">
-                            	@csrf
+                                @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="Full Name"required>
@@ -70,7 +70,7 @@
                                     <input type="text" class="form-control" name="city" placeholder="city" required>
                                 </div>
                                 <div class="form-group">
-                                	<img id="image" src="#" />
+                                    <img id="image" src="#" />
                                     <label for="exampleInputPassword11">Photo</label>
                                     <input type="file"  name="photo" accept="image/*"  required onchange="readURL(this);">
                                 </div>
@@ -88,7 +88,7 @@
 </div>
 
 <script type="text/javascript">
-	function readURL(input) {
+    function readURL(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();
           reader.onload = function (e) {

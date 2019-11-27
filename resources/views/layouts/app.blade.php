@@ -241,6 +241,15 @@
                                      <li><a href="#">Monthly Attendence</a></li>    
                                 </ul>
                             </li>
+
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"> <i class="md md-home"></i> <span>  Attendence Report</span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ URL::to('/report') }}">Invidual Report</a></li>
+                                        
+                                </ul>
+                            </li>
                            
 
                         </ul>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatAttendencesTable extends Migration
+class CreateAttendencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,6 +19,8 @@ class CreatAttendencesTable extends Migration
             $table->string('att_date');
             $table->string('att_year');
             $table->string('attendence');
+            $table->string('edit_date');
+            $table->string('month');
             $table->timestamps();
         });
     }

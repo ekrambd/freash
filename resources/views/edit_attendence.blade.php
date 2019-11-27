@@ -54,7 +54,7 @@
 	                                         </td>
 	                                         <input type="hidden" name="att_date" value="{{ date("d/m/y") }}">
 	                                         <input type="hidden" name="att_year" value="{{ date("Y") }}">
-
+                                             <input type="hidden" name="month" value="{{date('F')}}">
 	                                      </tr>
 	                                    @endforeach
 

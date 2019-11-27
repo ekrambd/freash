@@ -36,7 +36,7 @@
                                
                                 
                                 
-                                <input type="hidden" name="employee_id" value="{{$employees->id}}"
+                                <input type="hidden" name="employee_id" value="{{$employees->id}}">
                                 <div class="form-group">
                                     <label for="exampleInputPassword20"> Salary Month</label>
                                     <input type="text" class="form-control" name="salary_month" value="{{ date("F", strtotime('-1 months')) }}" required>

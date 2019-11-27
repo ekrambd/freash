@@ -95,6 +95,8 @@ Route::get('/all-attendence','AttendenceController@AllAttendence')->name('all.at
 Route::get('/edit-attendence/{edit_date}', 'AttendenceController@EditAttednece');
 Route::post('/update-attendence','AttendenceController@UpdateAttendence');
 Route::get('/view-attendence/{edit_date}', 'AttendenceController@ViewAttednece');
+Route::get('/report', 'AttendenceController@Report');
+Route::post('/att-report', 'AttendenceController@AttReport');
 
 
 //setting routes
@@ -128,5 +130,7 @@ Route::get('/monthly-sale', 'SalesController@MonthlySale');
 
 Route::get('/all-paid_salary', 'SalaryController@AllPaidSalary');
 Route::get('/category-details/{id}', 'SalaryController@CategoryDetails');
+
+
 
 

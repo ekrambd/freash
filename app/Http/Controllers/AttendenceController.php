@@ -43,7 +43,7 @@ class AttendenceController extends Controller
                 "att_date" =>$request->att_date,
                 "att_year" =>$request->att_year,
                 "month" =>$request->month,
-                "edit_date" =>date("d_m_y")
+                "edit_date" =>date("Y-m-d")
 
             ];
         }
@@ -191,5 +191,48 @@ class AttendenceController extends Controller
        }
 
       //end update company logo 
+    }
+
+
+    public function Report()
+    {
+        return view('inv_attendance');
+    }
+
+    public function AttReport(Request $request)
+    {
+        $month = $request->month;
+        $att_year = $request->att_year;
+        $edit_date  = $request->edit_date;
+        $user_id = $request->user_id;
+
+        
+
+        if($month && $user_id){
+            $report = DB::table('attendences')->where('month', $month)->where('user_id', $user_id)
+            ->join('employees', 'attendences.user_id', 'employees.id')
+            ->select('employees.*', 'attendences.*')
+            ->get();
+            return view('by_month', compact('report'));
+        }
+
+        if($edit_date){
+            $report = DB::table('attendences')->where('edit_date', $edit_date)->where('user_id', $user_id)
+            ->join('employees', 'attendences.user_id', 'employees.id')
+            ->select('employees.*', 'attendences.*')
+            ->get();
+           return view('by_date', compact('report'));
+        }
+
+        if($att_year){
+            $report = DB::table('attendences')->where('att_year', $att_year)->where('user_id', $user_id)
+            ->join('employees', 'attendences.user_id', 'employees.id')
+            ->select('employees.*', 'attendences.*')
+            ->get();
+            return view('by_year', compact('report'));
+        }
+
+       
+        
     }
 }
